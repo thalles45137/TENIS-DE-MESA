@@ -6,8 +6,9 @@ body {
     font-family: Arial, sans-serif; 
 }
 canvas { 
-    background: rgb(0, 183, 255); 
+    background-image: url();;
     display: block; 
     margin: auto; 
     border: 2px solid white; 
 }
+
