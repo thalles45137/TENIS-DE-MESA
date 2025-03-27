@@ -69,7 +69,7 @@ function draw() {
 
     // Raquetes
     ctx.fillRect(5, playerY, paddleWidth, paddleHeight);
-    ctx.fillRect(5, canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight);
+    ctx.fillRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight);
 
     // Bola
     ctx.beginPath();
@@ -78,8 +78,8 @@ function draw() {
 
     // Pontuação
     ctx.font = "20px Arial";
-    ctx.fillText(playerScore, canvas.width / 4, 11);
-    ctx.fillText(aiScore, (canvas.width / 4) * 3, 30);
+    ctx.fillText(playerScore, canvas.width / 4, 5);
+    ctx.fillText(aiScore, (canvas.width / 4) * 3, 5);
 }
 
 // Loop do jogo
