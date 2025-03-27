@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Paddle Wars</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pong</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            flex-direction: column;
+        }
+
+        canvas {
+            background-color: #222;
+            border: 2px solid white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>The Paddle Wars</h1>
-    <canvas id="gameCanvas" width="800" height="400"></canvas>
-    <script src="script.js"></script>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <button id="startButton">Iniciar Jogo</button>
+
+    <script src="pong.js"></script> <!-- Chamando o script externo -->
 </body>
 </html>
-<style>
-    body {
-        background-image: url(thallessss.jpg);
-        background-size: cover;
-        background-position: center;
-        
-    }
-</style>
