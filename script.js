@@ -42,7 +42,7 @@ function drawStartScreen() {
     const startButton = document.createElement('button');
     startButton.innerText = 'Começar';
     startButton.style.position = 'absolute';
-    startButton.style.left = `${canvas.width / 1 - 180}px`;
+    startButton.style.left = `${canvas.width / 1 - 199}px`;
     startButton.style.top = `${canvas.height / 1 - 60}px`;
     startButton.style.fontSize = '24px';
     startButton.style.padding = '15px 30px';
