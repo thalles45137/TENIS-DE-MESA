@@ -84,7 +84,7 @@ function draw() {
 
 
 // Loop do jogo
-function gameLoop() {
+function gameLoop(5) {
     moveBall(50);
     moveAI();
     draw();
