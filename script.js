@@ -9,6 +9,7 @@ let aiY = canvas.height / 2 - paddleHeight / 2;
 let ballX = canvas.width / 2, ballY = canvas.height / 2;
 let ballSpeedX = 5, ballSpeedY = 5;
 let playerScore = 0, aiScore = 0;
+let gameRunning = true;
 
 // Movimento da raquete do jogador
 document.addEventListener("keydown", (e) => {
@@ -44,11 +45,21 @@ function moveBall() {
     // Se a bola passar das raquetes, pontuação
     if (ballX < 0) {
         aiScore++;
+        checkGameOver();
         resetBall();
     }
     if (ballX > canvas.width) {
         playerScore++;
+        checkGameOver();
         resetBall();
+    }
+}
+
+// Função para verificar se o jogo acabou
+function checkGameOver() {
+    if (playerScore === 11 || aiScore === 11) {
+        gameRunning = false;
+        setTimeout(resetGame, 3000); // Espera 3 segundos para reiniciar o jogo
     }
 }
 
@@ -57,6 +68,20 @@ function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
     ballSpeedX = -ballSpeedX;
+}
+
+// Reinicia o jogo após 3 segundos
+function resetGame() {
+    playerScore = 0;
+    aiScore = 0;
+    gameRunning = true; // O jogo volta a rodar
+    playerY = canvas.height / 2 - paddleHeight / 2;
+    aiY = canvas.height / 2 - paddleHeight / 2;
+    ballX = canvas.width / 2;
+    ballY = canvas.height / 2;
+    ballSpeedX = 5;
+    ballSpeedY = 5;
+    gameLoop(); // Começa o loop novamente
 }
 
 // Renderiza os elementos na tela
@@ -85,7 +110,8 @@ function draw() {
 
 // Loop do jogo
 function gameLoop() {
-    moveBall(50);
+    if (!gameRunning) return;
+    moveBall();
     moveAI();
     draw();
     requestAnimationFrame(gameLoop);
