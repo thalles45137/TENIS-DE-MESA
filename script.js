@@ -31,16 +31,27 @@ function drawStartScreen() {
     input.type = 'text';
     input.placeholder = 'Digite seu nome';
     input.style.position = 'absolute';
-    input.style.left = `${canvas.width / 2 - 100}px`;
+    input.style.left = `${canvas.width / 2 - 150}px`;
     input.style.top = `${canvas.height / 2 + 20}px`;
+    input.style.fontSize = '18px';
+    input.style.padding = '10px';
+    input.style.textAlign = 'center';
     document.body.appendChild(input);
 
     // Botão de iniciar
     const startButton = document.createElement('button');
     startButton.innerText = 'Começar';
     startButton.style.position = 'absolute';
-    startButton.style.left = `${canvas.width / 2 - 50}px`;
-    startButton.style.top = `${canvas.height / 2 + 60}px`;
+    startButton.style.left = `${canvas.width / 2 - 75}px`;
+    startButton.style.top = `${canvas.height / 2 + 80}px`;
+    startButton.style.fontSize = '24px';
+    startButton.style.padding = '15px 30px';
+    startButton.style.backgroundColor = '#4CAF50'; // Cor verde
+    startButton.style.color = 'white';
+    startButton.style.border = 'none';
+    startButton.style.cursor = 'pointer';
+    startButton.style.borderRadius = '5px';
+    startButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
     document.body.appendChild(startButton);
 
     // Quando o jogador clicar em "Começar"
