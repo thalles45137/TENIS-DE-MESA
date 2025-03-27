@@ -39,20 +39,21 @@ function drawStartScreen() {
     document.body.appendChild(input);
 
     // Botão de iniciar
-    const startButton = document.createElement('button');
-    startButton.innerText = 'Começar';
-    startButton.style.position = 'absolute';
-    startButton.style.left = `${canvas.width / 2 - 120}px`;
-    startButton.style.top = `${canvas.height / 2 - 60}px`;
-    startButton.style.fontSize = '24px';
-    startButton.style.padding = '15px 30px';
-    startButton.style.backgroundColor = '#4CAF50'; // Cor verde
-    startButton.style.color = 'white';
-    startButton.style.border = 'none';
-    startButton.style.cursor = 'pointer';
-    startButton.style.borderRadius = '5px';
-    startButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
-    document.body.appendChild(startButton);
+const startButton = document.createElement('button');
+startButton.innerText = 'Começar';
+startButton.style.position = 'absolute';
+startButton.style.left = `${(canvas.width - 150) / 2}px`; // Ajustando para centralizar
+startButton.style.top = `${(canvas.height - 50) / 2 + 80}px`; // Ajustando a posição vertical
+startButton.style.fontSize = '24px'; // Tamanho da fonte do botão
+startButton.style.padding = '15px 30px'; // Tamanho do botão
+startButton.style.backgroundColor = '#4CAF50'; // Cor verde
+startButton.style.color = 'white';
+startButton.style.border = 'none';
+startButton.style.cursor = 'pointer';
+startButton.style.borderRadius = '5px';
+startButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+document.body.appendChild(startButton);
+
 
     // Quando o jogador clicar em "Começar"
     startButton.addEventListener('click', () => {
