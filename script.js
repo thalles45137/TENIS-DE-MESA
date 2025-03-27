@@ -78,9 +78,10 @@ function draw() {
 
     // Pontuação
     ctx.font = "20px Arial";
-    ctx.fillText(playerScore, canvas.width / 4, 5);
-    ctx.fillText(aiScore, (canvas.width / 4) * 3, 5);
+    ctx.fillText(playerScore, canvas.width / 4, 30);
+    ctx.fillText(aiScore, (canvas.width / 4) * 3, 30);
 }
+
 
 // Loop do jogo
 function gameLoop() {
