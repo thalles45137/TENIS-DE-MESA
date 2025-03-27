@@ -42,8 +42,8 @@ function drawStartScreen() {
     const startButton = document.createElement('button');
     startButton.innerText = 'Começar';
     startButton.style.position = 'absolute';
-    startButton.style.left = `${canvas.width / 2 - 0}px`;
-    startButton.style.top = `${canvas.height / 2 + 10}px`;
+    startButton.style.left = `${canvas.width - 150 / 2 }px`;
+    startButton.style.top = `${canvas.height - 50 / 2 + 80}px`;
     startButton.style.fontSize = '24px';
     startButton.style.padding = '15px 30px';
     startButton.style.backgroundColor = '#4CAF50'; // Cor verde
