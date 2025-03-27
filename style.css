@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif; 
 }
 canvas { 
-    background: rgb(56, 65, 68); 
+    background: rgba(47, 170, 211, 0.308); 
     display: block; 
     margin: auto; 
     border: 2px solid white; 
