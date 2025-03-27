@@ -177,3 +177,53 @@ function gameLoop() {
 
 // Inicia o jogo com a tela inicial
 gameLoop();
+// Carregar a imagem da tela inicial (antes de iniciar o jogo)
+const startImage = new Image();
+startImage.src = 'thallessss.jpg';  // Substitua pelo caminho correto da sua imagem
+
+// Função para desenhar a tela inicial
+function drawStartScreen() {
+    // Desenhar a imagem de fundo
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
+    ctx.drawImage(startImage, 0, 0, canvas.width, canvas.height); // Desenha a imagem no fundo
+
+    // Texto de introdução
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("Pressione 'Começar' para jogar", canvas.width / 2, canvas.height / 2 - 60);
+
+    // Botão "Começar" no meio da tela
+    const startButton = document.createElement('button');
+    startButton.innerText = 'Começar';
+    startButton.style.position = 'absolute';
+    startButton.style.left = `${(canvas.width - 150) / 2}px`;  // Centralizando
+    startButton.style.top = `${(canvas.height - 50) / 2 + 80}px`;  // Ajuste de posição
+    startButton.style.fontSize = '24px'; // Tamanho da fonte
+    startButton.style.padding = '15px 30px'; // Tamanho do botão
+    startButton.style.backgroundColor = '#4CAF50'; // Cor verde
+    startButton.style.color = 'white';
+    startButton.style.border = 'none';
+    startButton.style.cursor = 'pointer';
+    startButton.style.borderRadius = '5px';
+    startButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+    startButton.onclick = startGame; // Chama a função para iniciar o jogo
+    document.body.appendChild(startButton);
+}
+
+// Função para iniciar o jogo após o botão "Começar"
+function startGame() {
+    // Esconde o botão e a tela inicial
+    document.querySelectorAll('button').forEach(element => element.style.display = 'none');
+
+    // Começa o jogo após 3 segundos
+    setTimeout(() => {
+        gameStarted = true;
+        gameLoop(); // Inicia o loop do jogo
+    }, 3000); // Intervalo de 3 segundos
+}
+
+// Aguardar o carregamento da imagem e exibir a tela inicial
+startImage.onload = function() {
+    drawStartScreen(); // Desenha a tela inicial
+};
