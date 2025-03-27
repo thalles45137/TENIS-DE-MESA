@@ -31,8 +31,8 @@ function drawStartScreen() {
     input.type = 'text';
     input.placeholder = 'Digite seu nome';
     input.style.position = 'absolute';
-    input.style.left = `${canvas.width / 2 - 150}px`;
-    input.style.top = `${canvas.height / 2 + 20}px`;
+    input.style.left = `${canvas.width / 2 - 30}px`;
+    input.style.top = `${canvas.height / 2 + 60}px`;
     input.style.fontSize = '18px';
     input.style.padding = '10px';
     input.style.textAlign = 'center';
