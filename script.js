@@ -84,7 +84,7 @@ function draw() {
 
 // Loop do jogo
 function gameLoop() {
-    moveBall(20);
+    moveBall(50);
     moveAI();
     draw();
     requestAnimationFrame(gameLoop);
