@@ -73,7 +73,7 @@ function draw() {
 
     // Bola
     ctx.beginPath();
-    ctx.arc(ballX, ballY, 30, 0, Math.PI * 2);
+    ctx.arc(ballX, ballY, 15, 0, Math.PI * 2);
     ctx.fill();
 
     // Pontuação
