@@ -78,7 +78,7 @@ function draw() {
 
     // Pontuação
     ctx.font = "20px Arial";
-    ctx.fillText(playerScore, canvas.width / 4, 30);
+    ctx.fillText(playerScore, canvas.width / 4, 7);
     ctx.fillText(aiScore, (canvas.width / 4) * 3, 30);
 }
 
