@@ -6,9 +6,9 @@ body {
     font-family: Arial, sans-serif; 
 }
 canvas { 
-    background-image: url(mesa-de-ping-pong-tênis-com-raquete-e-bola-equipamento-visão-superior-jogo-torneio-campo-pingpong-desenho-verde-isolado-tribunal-245648052.jpg.webp);;
+<<<<<<< HEAD
+    background: rgb(0, 183, 255); 
     display: block; 
     margin: auto; 
     border: 2px solid white; 
 }
-
