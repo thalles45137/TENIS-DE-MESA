@@ -1,3 +1,7 @@
+// Variáveis globais para a tela inicial
+let isGameStarted = false;
+let playerName = '';
+
 // Configuração do Canvas
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -11,10 +15,50 @@ let ballSpeedX = 5, ballSpeedY = 5;
 let playerScore = 0, aiScore = 0;
 let gameRunning = true;
 
+// Criando a tela inicial
+function drawStartScreen() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Tela inicial
+    ctx.fillStyle = "white";
+    ctx.font = "30px Arial";
+    ctx.fillText("Bem-vindo ao Jogo!", canvas.width / 2 - 120, canvas.height / 2 - 60);
+    ctx.font = "20px Arial";
+    ctx.fillText("Digite seu nome e clique em Começar", canvas.width / 2 - 140, canvas.height / 2 - 20);
+
+    // Adicionando o campo de texto para o nome
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Digite seu nome';
+    input.style.position = 'absolute';
+    input.style.left = `${canvas.width / 2 - 100}px`;
+    input.style.top = `${canvas.height / 2 + 20}px`;
+    document.body.appendChild(input);
+
+    // Botão de iniciar
+    const startButton = document.createElement('button');
+    startButton.innerText = 'Começar';
+    startButton.style.position = 'absolute';
+    startButton.style.left = `${canvas.width / 2 - 50}px`;
+    startButton.style.top = `${canvas.height / 2 + 60}px`;
+    document.body.appendChild(startButton);
+
+    // Quando o jogador clicar em "Começar"
+    startButton.addEventListener('click', () => {
+        playerName = input.value || 'Jogador';  // Usar nome fornecido ou "Jogador" como padrão
+        input.remove();  // Remover campo de texto
+        startButton.remove();  // Remover botão
+        isGameStarted = true;  // Começar o jogo
+        gameLoop();  // Iniciar o loop do jogo
+    });
+}
+
 // Movimento da raquete do jogador
 document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp" && playerY > 0) playerY -= 20;
-    if (e.key === "ArrowDown" && playerY < canvas.height - paddleHeight) playerY += 20;
+    if (isGameStarted) {  // Só permite o movimento após o jogo começar
+        if (e.key === "ArrowUp" && playerY > 0) playerY -= 20;
+        if (e.key === "ArrowDown" && playerY < canvas.height - paddleHeight) playerY += 20;
+    }
 });
 
 // Atualiza a posição da IA (segue a bola)
@@ -103,13 +147,16 @@ function draw() {
 
     // Pontuação
     ctx.font = "20px Arial";
-    ctx.fillText(playerScore, canvas.width / 4, 30);
-    ctx.fillText(aiScore, (canvas.width / 4) * 3, 30);
+    ctx.fillText(playerName + ": " + playerScore, canvas.width / 4, 30);
+    ctx.fillText("IA: " + aiScore, (canvas.width / 4) * 3, 30);
 }
-
 
 // Loop do jogo
 function gameLoop() {
+    if (!isGameStarted) {
+        drawStartScreen(); // Mostrar a tela inicial
+        return;
+    }
     if (!gameRunning) return;
     moveBall();
     moveAI();
@@ -117,5 +164,5 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-// Inicia o jogo
+// Inicia o jogo com a tela inicial
 gameLoop();
