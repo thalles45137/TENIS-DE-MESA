@@ -1,12 +1,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
     text-align: center; 
-    background: #222; 
+    background: #ff0000; 
     color: white; 
     font-family: Arial, sans-serif; 
 }
 canvas { 
-    background: black; 
+    background: rgb(28, 2, 255); 
     display: block; 
     margin: auto; 
     border: 2px solid white; 
