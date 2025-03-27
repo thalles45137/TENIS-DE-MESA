@@ -53,7 +53,7 @@ function moveBall() {
 }
 
 // Reinicia a bola após um ponto
-function resetBall(3) {
+function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
     ballSpeedX = -ballSpeedX;
