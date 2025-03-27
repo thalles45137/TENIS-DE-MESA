@@ -33,7 +33,7 @@ function moveBall() {
 
     // Colisão com a raquete do jogador
     if (ballX <= paddleWidth && ballY > playerY && ballY < playerY + paddleHeight) {
-        ballSpeedX *= -5;
+        ballSpeedX *= -1;
     }
 
     // Colisão com a raquete da IA
