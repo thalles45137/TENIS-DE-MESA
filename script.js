@@ -68,7 +68,7 @@ function draw() {
     ctx.fillRect(canvas.width / 2 - 1, 0, 2, canvas.height);
 
     // Raquetes
-    ctx.fillRect(0, playerY, paddleWidth, paddleHeight);
+    ctx.fillRect(5, playerY, paddleWidth, paddleHeight);
     ctx.fillRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight);
 
     // Bola
