@@ -8,7 +8,7 @@ let playerY = canvas.height / 2 - paddleHeight / 2;
 let aiY = canvas.height / 2 - paddleHeight / 2;
 let ballX = canvas.width / 2, ballY = canvas.height / 2;
 let ballSpeedX = 5, ballSpeedY = 5;
-let playerScore = 0, aiScore = 0;
+let playerScore = 2, aiScore = 2;
 
 // Movimento da raquete do jogador
 document.addEventListener("keydown", (e) => {
