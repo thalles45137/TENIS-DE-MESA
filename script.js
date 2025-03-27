@@ -22,7 +22,7 @@ function drawStartScreen() {
     // Tela inicial
     ctx.fillStyle = "white";
     ctx.font = "30px Arial";
-    ctx.fillText("Bem-vindo ao The Paddle Wars!", canvas.width / 2 - 150, canvas.height / 2 - 30);
+    ctx.fillText("Bem-vindo ao The Paddle Wars!", canvas.width / 2 - 190, canvas.height / 2 - 60);
     ctx.font = "20px Arial";
     ctx.fillText("Digite seu nome e clique em Começar", canvas.width / 2 - 140, canvas.height / 2 - 20);
 
